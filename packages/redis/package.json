@@ -1,6 +1,6 @@
 {
-	"name": "@keyv/redis",
-	"version": "4.2.0",
+	"name": "yum-keyv-redis",
+	"version": "4.2.1",
 	"description": "Redis storage adapter for Keyv",
 	"type": "module",
 	"main": "dist/index.cjs",
@@ -13,15 +13,14 @@
 		}
 	},
 	"scripts": {
-		"build": "rimraf ./dist && tsup src/index.ts --format cjs,esm --dts --clean",
-		"prepublishOnly": "pnpm build",
+		"build:releaseå": "rimraf ./dist && tsup src/index.ts --format cjs,esm --dts --clean",
 		"test": "xo --fix && vitest run --coverage --typecheck",
 		"test:ci": "xo && vitest --run --sequence.setupFiles=list --typecheck",
 		"clean": "rimraf ./node_modules ./coverage ./dist"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jaredwray/keyv.git"
+		"url": "git+https://github.com/moseszhou/keyv.git"
 	},
 	"keywords": [
 		"redis",
@@ -42,7 +41,7 @@
 	"homepage": "https://github.com/jaredwray/keyv",
 	"dependencies": {
 		"cluster-key-slot": "^1.1.2",
-		"keyv": "workspace:^",
+		"keyv": "^5.2.3",
 		"redis": "^4.7.0"
 	},
 	"devDependencies": {
@@ -58,7 +57,7 @@
 		"directory": "test"
 	},
 	"engines": {
-		"node": ">= 18"
+		"node": ">= 16"
 	},
 	"files": [
 		"dist",
